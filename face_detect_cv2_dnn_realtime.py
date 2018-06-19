@@ -21,6 +21,8 @@ while cap.isOpened():
     if ret==False:
         break
     
+    frame=cv2.flip(frame,1)
+    
     (h,w) = frame.shape[:2]
     blob=cv2.dnn.blobFromImage(cv2.resize(frame,(300,300)),1.0,(300,300),(104.0,177.0,123.0))
     net.setInput(blob)
